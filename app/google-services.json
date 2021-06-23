@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "60586682741",
+    "project_id": "chatapp-d7405",
+    "storage_bucket": "chatapp-d7405.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60586682741:android:d000ba13950d12da2acb3c",
+        "android_client_info": {
+          "package_name": "com.yoshuafachry.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "60586682741-f9fj131qdci32h782o1cmgh1gfsegcl9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_sE16ZyDc5itnhMjUlzteYXoAI2zMlcU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "60586682741-f9fj131qdci32h782o1cmgh1gfsegcl9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
