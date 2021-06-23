@@ -13,12 +13,11 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.yoshuafachry.chatapp.MainActivity;
 import com.yoshuafachry.chatapp.R;
 import com.yoshuafachry.chatapp.databinding.ActivityInfoAkunBinding;
-import com.yoshuafachry.chatapp.model.Akun;
+import com.yoshuafachry.chatapp.model.Tab;
 
 public class InfoAkun extends AppCompatActivity {
 
@@ -56,7 +55,7 @@ public class InfoAkun extends AppCompatActivity {
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         if(firebaseUser != null) {
             String ID = firebaseUser.getUid();
-            Akun akun = new Akun(ID,
+            Tab akun = new Tab(ID,
                     firebaseUser.getPhoneNumber(),
                     binding.edNama.getText().toString(),
                     "",

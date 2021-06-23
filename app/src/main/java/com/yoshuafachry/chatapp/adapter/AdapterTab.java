@@ -1,6 +1,7 @@
 package com.yoshuafachry.chatapp.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,15 +11,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.yoshuafachry.chatapp.R;
-import com.yoshuafachry.chatapp.model.Chat;
+import com.yoshuafachry.chatapp.menu.Chatting;
+import com.yoshuafachry.chatapp.model.Tab;
 
 import java.util.List;
 
-public class AdapterChat extends RecyclerView.Adapter<AdapterChat.Holder> {
-    private List<Chat> list;
+public class AdapterTab extends RecyclerView.Adapter<AdapterTab.Holder> {
+    private List<Tab> list;
     private Context context;
 
-    public AdapterChat(List<Chat> list, Context context) {
+    public AdapterTab(List<Tab> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -26,16 +28,25 @@ public class AdapterChat extends RecyclerView.Adapter<AdapterChat.Holder> {
     @NonNull
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.chat_layout, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.tab_layout, parent, false);
         return new Holder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
-        Chat chat = list.get(position);
+        Tab chat = list.get(position);
         holder.tvNama.setText(chat.getNama());
-        holder.tvKet.setText(chat.getKet());
-        holder.tvTgl.setText(chat.getTgl());
+        holder.tvKet.setText(chat.getKeterangan());
+        holder.tvTgl.setText(chat.getTanggal());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.startActivity(new Intent(context, Chatting.class).
+                        putExtra("ID", chat.getID()).
+                        putExtra("nama", chat.getNama()));
+            }
+        });
     }
 
     @Override

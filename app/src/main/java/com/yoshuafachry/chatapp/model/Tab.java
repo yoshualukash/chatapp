@@ -1,12 +1,12 @@
 package com.yoshuafachry.chatapp.model;
 
-public class Akun {
+public class Tab {
     private String ID, noTelp, nama, keterangan, tanggal;
 
-    public Akun() {
+    public Tab() {
     }
 
-    public Akun(String ID, String noTelp, String nama, String keterangan, String tanggal) {
+    public Tab(String ID, String noTelp, String nama, String keterangan, String tanggal) {
         this.ID = ID;
         this.noTelp = noTelp;
         this.nama = nama;

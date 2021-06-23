@@ -27,7 +27,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.yoshuafachry.chatapp.MainActivity;
 import com.yoshuafachry.chatapp.R;
 import com.yoshuafachry.chatapp.databinding.ActivitySignInBinding;
-import com.yoshuafachry.chatapp.model.Akun;
+import com.yoshuafachry.chatapp.model.Tab;
 
 import java.util.concurrent.TimeUnit;
 
@@ -66,7 +66,7 @@ public class SignIn extends AppCompatActivity {
         //Cek jika user sudah terdaftar atau belum
         mUser = FirebaseAuth.getInstance().getCurrentUser();
         if(mUser != null){
-            startActivity(new Intent(this, InfoAkun.class));
+            startActivity(new Intent(this, MainActivity.class));
             finish();
         }
 
@@ -148,7 +148,7 @@ public class SignIn extends AppCompatActivity {
                             FirebaseUser user = task.getResult().getUser();
                             if(user != null){
                                 String ID = user.getUid();
-                                Akun akun = new Akun(ID, user.getPhoneNumber(), "", "", "");
+                                Tab akun = new Tab(ID, user.getPhoneNumber(), "", "", "");
 
                                 mFirestore.collection("Akun").document(user.getUid()).collection(ID)
                                         .add(akun).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
