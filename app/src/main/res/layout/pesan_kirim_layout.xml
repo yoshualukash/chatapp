@@ -9,12 +9,23 @@
     android:orientation="horizontal">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
         android:id="@+id/tv_isi_pesan"
-        android:padding="5dp"
-        android:layout_marginLeft="5dp"
+        android:layout_weight="10"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:padding="16dp"
+        android:background="@drawable/rounded_corner"
         android:text="Pesan kirim . . ."
         android:textColor="@color/black"/>
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="-15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/arrow_bg3"/>
 
 </LinearLayout>

@@ -10,6 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:id="@+id/label_atas"
         android:padding="10dp"
         android:orientation="horizontal">
@@ -29,6 +30,7 @@
         android:layout_below="@+id/label_atas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/label_tengah"
         android:gravity="center_horizontal"
         android:padding="25dp"
         android:orientation="vertical">
@@ -51,7 +53,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mungkin memerlukan biaya SMS"/>
+            android:layout_marginTop="60dp"
+            android:text="Masukkan kode verifikasi jika sudah menerima kode"/>
         <EditText
             android:layout_width="150dp"
             android:layout_height="wrap_content"
@@ -60,16 +63,20 @@
             android:inputType="number"
             android:maxLength="6"
             android:hint="Masukkan Kode"/>
-
     </LinearLayout>
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_masuk"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:text="Masuk"/>
-
+        android:layout_below="@+id/label_tengah"
+        android:gravity="center_horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_masuk"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:text="Masuk"/>
+    </LinearLayout>
 </RelativeLayout>
 </layout>

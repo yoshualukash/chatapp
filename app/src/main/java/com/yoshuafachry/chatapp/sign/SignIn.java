@@ -62,7 +62,6 @@ public class SignIn extends AppCompatActivity {
         // Initialize Firestore
         mFirestore = FirebaseFirestore.getInstance();
 
-
         //Cek jika user sudah terdaftar atau belum
         mUser = FirebaseAuth.getInstance().getCurrentUser();
         if(mUser != null){

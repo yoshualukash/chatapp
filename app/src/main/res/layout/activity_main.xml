@@ -23,12 +23,11 @@
         android:id="@+id/tab_layout"/>
 
     <androidx.viewpager.widget.ViewPager
-        android:layout_below="@+id/btn_keluar"
+        android:layout_below="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/view_pager"
-        android:visibility="visible"
-        android:layout_marginTop="30dp"/>
+        android:visibility="visible"/>
 
 </RelativeLayout>
 </layout>

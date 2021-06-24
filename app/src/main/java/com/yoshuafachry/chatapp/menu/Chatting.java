@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -45,6 +47,13 @@ public class Chatting extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Hide Action Bar & Title Bar
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
+        //SET BACKGROUND COLOR
+        getWindow().getDecorView().setBackgroundColor(getResources().getColor(R.color.main_activity_background_color));
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_chatting);
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -70,7 +79,9 @@ public class Chatting extends AppCompatActivity {
 
         list = new ArrayList<>();
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
-        layoutManager.setStackFromEnd(true);
+
+        //Kalau mau ngeset chatnya dari bawah
+        //layoutManager.setStackFromEnd(true);
         binding.recyclerView.setLayoutManager(layoutManager);
 
         bacaPesan();
@@ -101,7 +112,7 @@ public class Chatting extends AppCompatActivity {
 
         DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("Daftar Chat").
                 child(IDPenerima).child(firebaseUser.getUid());
-        reference1.child("IDChat").setValue(IDPenerima);
+        reference2.child("IDChat").setValue(IDPenerima);
     }
     private void bacaPesan() {
         try{
